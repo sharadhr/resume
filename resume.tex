@@ -9,6 +9,7 @@
 \usepackage[]{tabularx}
 \usepackage[]{booktabs}
 \recomputelengths{}
+\nopagenumbers{}
 
 \hypersetup{
 	colorlinks	= true,			% Colours links instead of ugly boxes
@@ -24,7 +25,7 @@
 
 \begin{document}
 \makecvtitle{}
-\vspace{-1cm}
+\vspace{-1.25cm}
 \section{Education}
 \cventry{August 2018---May 2023}{Bachelor of Computing (Honours) in Computer Science; \nth{2} Major in Physics}{National University of Singapore (NUS)}{}{}{
 	\textbf{Parallel Computing \& Systems}
@@ -45,31 +46,39 @@
 
 \section{Experience}
 \cventry{Various Semesters}{Undergraduate Teaching Assistant (TA)}{National University of Singapore, School of Computing}{}{}{
-	\begin{itemize}
-		\item \textbf{CS2100 (AY20/21 Semester 1)}: Tutored 40 students in computer organisation, including MIPS assembly, processor datapaths \& branch prediction/hazards, logic circuits
-		\item \textbf{CS3241 (AY20/21 Semester 1)}: Tutored 20 students on computer graphics basics, prepared tutorial slides, and graded assignments
-		\item \textbf{CS4247 (AY20/21 Semester 2)}: Prepared cross-platform solution for OpenGL assignments, and graded these assignments with an automated script
-	\end{itemize}
+	\begin{minipage}{0.8\textwidth}
+		\begin{itemize}
+			\item \textbf{CS2100 (Autumn 2020)}: Tutored 40 students in computer organisation, including MIPS assembly, processor datapaths \& branch prediction/hazards, logic circuits
+			\item \textbf{CS3241 (Autumn 2020)}: Tutored 20 students on computer graphics basics, prepared tutorial slides, and graded assignments
+			\item \textbf{CS4247 (Spring 2021)}: Prepared cross-platform solution for OpenGL assignments, and graded these assignments with an automated script
+		\end{itemize}
+	\end{minipage}
 }
 
 \section{Projects}
-\cventry{CS3203 Software Engineering Project}{\textbf{Static Program Analyser}}{}{}{}{Lexer and parser for a toy language using recursive descent, implemented in C++17, with unit tests using \texttt{CppUnitTest} framework}
+\cventry{CS3203 Software Engineering Project}{\textbf{Static Program Analyser}}{}{}{}{
+	\begin{minipage}{0.7\textwidth}
+		Lexer and parser for a toy language using recursive descent, implemented in C++17, with unit tests using \texttt{CppUnitTest} framework
+	\end{minipage}
+}
 \cventry{CS2103T Software Engineering}{\textbf{CookBuddy Recipe Manager}}{}{}{}{Recipe manager implemented in Java SE 11 and JavaFX}
-\cventry{July 2020}{\textbf{ManifestoAnalyse}}{}{}{}{Analyses election campaign manifestos, implemented in Python with natural-language processing (NLP) libraries}
+\cventry{July 2020}{\textbf{ManifestoAnalyse}}{}{}{}{\begin{minipage}{0.7\textwidth}
+		Analyses election campaign manifestos, implemented in Python with natural-language processing (NLP) libraries
+	\end{minipage}}
 
 \section{Skills}
 \setlength{\tabcolsep}{6pt}
 {\small\begin{tabularx}{\textwidth}{@{}rllcX@{}}
-		                   & \textbf{Level} & \textbf{Skill}           & \textbf{Years} & \textbf{Standards, APIs, \& Frameworks}                                                                             \\ \cmidrule(l){2-5}
-		\textbf{Languages} & \cvskill{4}    & Java                     & 9              & Java SE 11; functional \& declarative constructs with \texttt{java.util.function}, \texttt{java.util.stream}; Guava \\[3pt]
-		\textbf{}          & \cvskill{3}    & C/C++                    & 5              & C18/C++17; Unix/Linux APIs, OpenGL 4.5, GLSL, OpenMP, MPI                                                           \\[3pt]
-		\textbf{}          & \cvskill{3}    & LaTeX                    & 4              & Custom document classes; native graphics with PGF/TikZ                                                              \\[3pt]
-		\textbf{}          & \cvskill{1}    & Python                   & 1              & Scientific computing: \texttt{pandas}, \texttt{scipy}, \texttt{matplotlib}                                          \\[3pt]
-		\textbf{}          & \cvskill{1}    & CUDA                     & 1              & Looping, hash calculation, block/thread allocation                                                                  \\[3pt]
-		\textbf{}          & \cvskill{2}    & PowerShell               & 2              &                                                                                                                     \\ \cmidrule(l){2-5}
-		\textbf{Tools}     & \cvskill{2}    & Unix utilities \& shells & 1              & \texttt{bash}, \texttt{sed}, \texttt{awk}, \texttt{grep}                                                            \\
-		\textbf{}          & \cvskill{3}    & Git/GitHub               & 2              &                                                                                                                     \\
-		\textbf{}          & \cvskill{2}    & CI/CD                    & 1              & Gradle, Maven, CMake, Travis CI                                                                                     \\ \cmidrule(l){2-5}
+		                   & \textbf{Level} & \textbf{Skill} & \textbf{Years} & \textbf{Standards, APIs, \& Frameworks}                                                                             \\ \cmidrule(l){2-5}
+		\textbf{Languages} & \cvskill{4}    & Java           & 9              & Java SE 11; functional \& declarative constructs with \texttt{java.util.function}, \texttt{java.util.stream}; Guava \\[3pt]
+		\textbf{}          & \cvskill{3}    & C/C++          & 5              & C18/C++17; Unix/Linux APIs, OpenGL 4.5, GLSL, OpenMP, MPI                                                           \\[3pt]
+		\textbf{}          & \cvskill{3}    & LaTeX          & 4              & Custom document classes; native graphics with PGF/TikZ                                                              \\[3pt]
+		\textbf{}          & \cvskill{1}    & Python         & 1              & Scientific computing: \texttt{pandas}, \texttt{scipy}, \texttt{matplotlib}                                          \\[3pt]
+		\textbf{}          & \cvskill{1}    & CUDA           & 1              & Looping, hash calculation, block/thread allocation                                                                  \\[3pt]
+		\textbf{}          & \cvskill{2}    & PowerShell     & 2              &                                                                                                                     \\ \cmidrule(l){2-5}
+		\textbf{Tools}     & \cvskill{2}    & Unix utils     & 1              & \texttt{bash}, \texttt{sed}, \texttt{awk}, \texttt{grep}                                                            \\
+		\textbf{}          & \cvskill{3}    & Git/GitHub     & 2              &                                                                                                                     \\
+		\textbf{}          & \cvskill{2}    & CI/CD          & 1              & Gradle, Maven, CMake, Travis CI                                                                                     \\ \cmidrule(l){2-5}
 	\end{tabularx}
 }
 \setlength{\tabcolsep}{0pt}
@@ -77,13 +86,13 @@
 \section{Leadership}
 \cventry{August 2018---May 2020}{Honorary General Secretary}{NUS Astronomical Society}{}{}{
 	\begin{itemize}
-		\item Organised astronomy outreach events with pre-university schools in Singapore, with public sidewalk astronomy events
-		\item Prepared questions, typeset papers for, and co-organised AstroChallenge 2019 and 2020; AstroChallenge is an astronomy competition for secondary and pre-university students in Singapore
+		\item Organized outreach events with pre-university schools
+		\item Led sidewalk astronomy sessions; co-organised AstroChallenge 2019 and 2020\newline{}
 	\end{itemize}
 }
 \cventry{August 2016---February 2018}{Signal \& Radio Operator}{35th Battalion, Singapore Combat Engineers (35 SCE), Singapore Armed Forces}{}{Corporal, First Class (CFC)}{
 	\begin{itemize}
-	\item Set up brigade-level software-defined radio and battle nets for field exercises
-	\item Set up quadrophonic sound system for National Day parade (NDP) rehearsals
-\end{itemize}}
+		\item Set up brigade-level software-defined radio and battle nets for field exercises
+		\item Set up quadrophonic sound system for National Day parade (NDP) rehearsals
+	\end{itemize}}
 \end{document}
