@@ -1,5 +1,6 @@
 \documentclass[10pt,sans,dvipsnames,hyperref,table]{moderncv}
-\moderncvstyle[blue]{banking}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
 
 \usepackage{xcolor}
 \usepackage[unicode]{hyperref}
@@ -12,9 +13,33 @@
 \nopagenumbers{}
 \renewcommand\labelitemi{--}
 
+\renewcommand*{\cventry}[7][.25em]{
+	\begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}%
+	% skip the company name and location line if both are empty, allowing one to show multiple roles within the same company without repeating it
+	\ifboolexpr{%
+		test {\ifstrempty{#4}}
+		and
+		test {\ifstrempty{#5}}}%
+		{}%
+		{{\bfseries #4} & {\bfseries #5}}%
+		\ifboolexpr{%
+		test {\ifstrempty{#3}}
+		and
+		test {\ifstrempty{#6}}}%
+		{}
+		{\\ {\itshape #3\ifstrempty{#6}{}{, #6}} & {\itshape #2}\\}%
+	\end{tabular*}%
+	\ifx&#7&%
+	\else{\\%
+	\begin{minipage}{\maincolumnwidth}%
+		\small#7%
+	\end{minipage}}\fi%
+	\par\addvspace{#1}
+}
+
 \hypersetup{
 	colorlinks	= true,			% Colours links instead of ugly boxes
-	urlcolor	= Blue,			% Colour for external hyperlinks
+	urlcolor	= PineGreen,			% Colour for external hyperlinks
 	linkcolor	= magenta,		% Colour of internal links
 	citecolor	= teal			% Colour of citations
 }
@@ -25,21 +50,23 @@
 \social[telegram]{sc_ramjet}
 
 \begin{document}
-\makecvtitle{}
+\maketitle{}
 \vspace{-1.25cm}
 \section{Education}
-\cventry{August 2018---May 2023}{Bachelor of Computing (Honours) in Computer Science; \nth{2} Major in Physics}{National University of Singapore (NUS)}{}{}{
-	\textbf{Parallel Computing \& Systems}
+\cventry{Aug 2018--May 2023}{Bachelor of Computing (Honours) in Computer Science; \nth{2} Major in Physics}{National University of Singapore (NUS)}{}{}{
 	\begin{itemize}
-		\item OS concepts: processes, scheduling \& synchronisation, memory management
-		\item Parallelism levels, Flynn's taxonomy, multiprocessing/threading, distributed computing
-	\end{itemize}
-	\textbf{Graphics and Games}
-	\begin{itemize}
-		\item Graphics pipeline, rasterisation, (real-time) ray-tracing, physically-based rendering, BRDFs\newline{}
+		\item \textbf{Parallel Computing \& Systems}
+		      \begin{itemize}
+			      \item OS concepts: processes, scheduling \& synchronisation, memory management
+			      \item Parallelism levels, Flynn's taxonomy, multiprocessing/threading, distributed computing
+		      \end{itemize}
+		\item \textbf{Graphics and Games}
+		      \begin{itemize}
+			      \item Graphics pipeline, rasterisation, (real-time) ray-tracing, physically-based rendering, BRDFs\newline{}
+		      \end{itemize}
 	\end{itemize}
 }
-\cventry{February 2014---December 2015}{Science Stream}{Raffles Institution}{}{}{
+\cventry{Feb 2014--Dec 2015}{Science Stream}{Raffles Institution}{}{}{
 	\begin{itemize}
 		\item Distinctions in H2 Physics, Chemistry, Mathematics
 	\end{itemize}
@@ -57,41 +84,40 @@
 }
 
 \section{Projects}
-\cventry{CS3203 Software Engineering Project}{\textbf{Static Program Analyser}}{}{}{}{
-	\begin{minipage}{0.7\textwidth}
-		Lexer and parser for a toy language using recursive descent, implemented in C++17, with unit tests using \texttt{CppUnitTest} framework
+\cventry{}{}{Static Program Analyser}{CS3203 Project}{}{
+	\begin{minipage}{0.8\textwidth}
+		Lexer and parser for a toy language using recursive descent, implemented in C++17; unit tests in \texttt{CppUnitTest} framework
 	\end{minipage}
 }
-\cventry{CS2103T Software Engineering}{\textbf{CookBuddy Recipe Manager}}{}{}{}{Recipe manager implemented in Java SE 11 and JavaFX}
-\cventry{July 2020}{\textbf{ManifestoAnalyse}}{}{}{}{\begin{minipage}{0.7\textwidth}
+\cventry{}{}{CookBuddy Recipe Manager}{CS2103T Project}{}{Recipe manager implemented in Java SE 11 and JavaFX}
+\cventry{}{}{ManifestoAnalyse}{}{}{\begin{minipage}{0.8\textwidth}
 		Analyses election campaign manifestos, implemented in Python with natural-language processing (NLP) libraries
 	\end{minipage}}
 
 \section{Skills}
-\setlength{\tabcolsep}{6pt}
-{\small\begin{tabularx}{\textwidth}{@{}rllcX@{}}
+\setlength{\tabcolsep}{3pt}
+{\small\begin{tabularx}{\textwidth}{@{}rlllX@{}}
 		                   & \textbf{Level} & \textbf{Skill} & \textbf{Years} & \textbf{Standards, APIs, \& Frameworks}                                                                             \\ \cmidrule(l){2-5}
 		\textbf{Languages} & \cvskill{4}    & Java           & 9              & Java SE 11; functional \& declarative constructs with \texttt{java.util.function}, \texttt{java.util.stream}; Guava \\[3pt]
 		\textbf{}          & \cvskill{3}    & C/C++          & 5              & C18/C++17; Unix/Linux APIs, OpenGL 4.5, GLSL, OpenMP, MPI                                                           \\[3pt]
 		\textbf{}          & \cvskill{3}    & LaTeX          & 4              & Custom document classes; native graphics with PGF/TikZ                                                              \\[3pt]
 		\textbf{}          & \cvskill{1}    & Python         & 1              & Scientific computing: \texttt{pandas}, \texttt{scipy}, \texttt{matplotlib}                                          \\[3pt]
-		\textbf{}          & \cvskill{1}    & CUDA           & 1              & Looping, hash calculation, block/thread allocation                                                                  \\[3pt]
-		\textbf{}          & \cvskill{2}    & PowerShell     & 2              &                                                                                                                     \\ \cmidrule(l){2-5}
-		\textbf{Tools}     & \cvskill{2}    & Unix utils     & 1              & \texttt{bash}, \texttt{sed}, \texttt{awk}, \texttt{grep}                                                            \\
-		\textbf{}          & \cvskill{3}    & Git/GitHub     & 2              &                                                                                                                     \\
+		\textbf{}          & \cvskill{1}    & CUDA           & 1              & Looping, hash calculation, block/thread allocation                                                                  \\[3pt] \cmidrule(l){2-5}
+		\textbf{Tools}     & \cvskill{3}    & Git/GitHub     & 2              &                                                                                                                     \\[3pt]
+		\textbf{}          & \cvskill{2}    & Unix utils     & 1              & \texttt{bash}, \texttt{sed}, \texttt{awk}, \texttt{grep}                                                            \\[3pt]
 		\textbf{}          & \cvskill{2}    & CI/CD          & 1              & Gradle, Maven, CMake, Travis CI                                                                                     \\ \cmidrule(l){2-5}
 	\end{tabularx}
 }
 \setlength{\tabcolsep}{0pt}
 
 \section{Leadership}
-\cventry{August 2018---May 2020}{Honorary General Secretary}{NUS Astronomical Society}{}{}{
+\cventry{Aug 2018--May 2020}{Honorary General Secretary}{NUS Astronomical Society}{}{}{
 	\begin{itemize}
 		\item Organized outreach events with pre-university schools
 		\item Led sidewalk astronomy sessions; co-organised AstroChallenge 2019 and 2020\newline{}
 	\end{itemize}
 }
-\cventry{August 2016---February 2018}{Signal \& Radio Operator}{35th Battalion, Singapore Combat Engineers (35 SCE), Singapore Armed Forces}{}{Corporal, First Class (CFC)}{
+\cventry{Aug 2016--Feb 2018}{Signal \& Radio Operator}{35th Battalion, Singapore Combat Engineers (35 SCE), Singapore Armed Forces}{}{Corporal, First Class (CFC)}{
 	\begin{itemize}
 		\item Set up brigade-level software-defined radio and battle nets for field exercises
 		\item Set up quadrophonic sound system for National Day parade (NDP) rehearsals
