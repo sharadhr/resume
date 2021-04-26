@@ -9,6 +9,7 @@
 \usepackage[super]{nth}
 \usepackage[]{tabularx}
 \usepackage[]{booktabs}
+\usepackage{etoolbox}
 \recomputelengths{}
 \nopagenumbers{}
 \renewcommand\labelitemi{--}
@@ -37,9 +38,14 @@
 	\par\addvspace{#1}
 }
 
+\patchcmd{\makehead}% <cmd>
+  {0.8\textwidth}% <search>
+  {\textwidth}% <replace>
+  {}{}% <success><failure>
+
 \hypersetup{
 	colorlinks	= true,			% Colours links instead of ugly boxes
-	urlcolor	= PineGreen,			% Colour for external hyperlinks
+	urlcolor	= PineGreen,		% Colour for external hyperlinks
 	linkcolor	= magenta,		% Colour of internal links
 	citecolor	= teal			% Colour of citations
 }
@@ -48,35 +54,38 @@
 \phone[mobile]{+65~9846~7310}
 \social[github]{sharadhr}
 \social[telegram]{sc_ramjet}
+\social[linkedin][www.linkedin.com/in/sharadh-rajaraman-9ba68720a/]{Sharadh Rajaraman}
 
 \begin{document}
 \maketitle{}
+
 \vspace{-1.25cm}
+
 \section{Education}
 \cventry{Aug 2018--May 2023}{Bachelor of Computing (Honours) in Computer Science; \nth{2} Major in Physics}{National University of Singapore (NUS)}{}{}{
 	\begin{minipage}{0.8\textwidth}
 		\begin{itemize}
 			\item \textbf{Parallel Computing \& Systems}
-				  \begin{itemize}
-					  \item OS concepts: processes, scheduling \& synchronisation, memory management, filesystem implementation
-					  \item Parallelism levels, Flynn's taxonomy, multiprocessing/threading, distributed computing, CUDA
-				  \end{itemize}
+			      \begin{itemize}
+				      \item OS concepts: processes, scheduling \& synchronisation, memory management, filesystem implementation
+				      \item Parallelism levels, Flynn's taxonomy, multiprocessing/threading, distributed computing, CUDA
+			      \end{itemize}
 			\item \textbf{Graphics and Games}
-				  \begin{itemize}
-					  \item Graphics pipeline, rasterisation, (real-time) ray-tracing, physically-based rendering (Cook-Torrance model), BRDFs, radiosity methods
-				  \end{itemize}
+			      \begin{itemize}
+				      \item Graphics pipeline, rasterisation, (real-time) ray-tracing, physically-based rendering (Cook-Torrance model), BRDFs, radiosity methods
+			      \end{itemize}
 			\item \textbf{Quantum Mechanics \& Astrophysics}
-				  \begin{itemize}
-					  \item 2-state systems; orbital mechanics, stellar properties and evolution
-				  \end{itemize}
+			      \begin{itemize}
+				      \item 2-state systems; orbital mechanics, stellar properties and evolution
+			      \end{itemize}
 		\end{itemize}
 	\end{minipage}
 }
-\cventry{Feb 2014--Dec 2015}{Science Stream}{Raffles Institution}{}{}{
-	\begin{itemize}
-		\item Distinctions in H2 Physics, Chemistry, Mathematics\vspace{-2em}
-	\end{itemize}
-}
+% \cventry{Feb 2014--Dec 2015}{Science Stream}{Raffles Institution}{}{}{
+% 	\begin{itemize}
+% 		\item Distinctions in H2 Physics, Chemistry, Mathematics\vspace{-2em}
+% 	\end{itemize}
+% }
 
 \section{Experience}
 \cventry{Various Semesters}{Undergraduate Teaching Assistant (TA)}{National University of Singapore, School of Computing}{}{}{
@@ -99,25 +108,27 @@
 \cventry{}{}{CookBuddy Recipe Manager}{CS2103T Project}{}{Recipe manager implemented in Java SE 11 and JavaFX}
 \cventry{}{}{ManifestoAnalyse}{}{}{\begin{minipage}{0.8\textwidth}
 		Analyses election campaign manifestos, implemented in Python with natural-language processing (NLP) libraries
-	\end{minipage}}
+	\end{minipage}
+}
 
 \section{Skills}
 \setlength{\tabcolsep}{3pt}
-{\small\begin{tabularx}{\textwidth}{@{}rlllX@{}}
-		                   & \textbf{Level} & \textbf{Skill} & \textbf{Years} & \textbf{Standards, APIs, \& Frameworks}                                                                             \\ \cmidrule(l){2-5}
-		\textbf{Languages} & \cvskill{4}    & Java           & 9              & Java SE 11; functional \& declarative constructs with \texttt{java.util.function}, \texttt{java.util.stream}; Guava \\[3pt]
-		\textbf{}          & \cvskill{3}    & C/C++          & 5              & C18/C++17; Unix/Linux APIs, OpenGL 4.5, GLSL, OpenMP, MPI                                                           \\[3pt]
-		\textbf{}          & \cvskill{3}    & LaTeX          & 4              & Custom document classes; native graphics with PGF/TikZ                                                              \\[3pt]
-		\textbf{}          & \cvskill{1}    & Python         & 1              & Scientific computing: \texttt{pandas}, \texttt{scipy}, \texttt{matplotlib}                                          \\[3pt]
-		\textbf{}          & \cvskill{1}    & CUDA           & 1              & Looping, hash calculation, block/thread allocation                                                                  \\[3pt] \cmidrule(l){2-5}
-		\textbf{Tools}     & \cvskill{3}    & Git/GitHub     & 2              &                                                                                                                     \\[3pt]
-		\textbf{}          & \cvskill{2}    & Unix utils     & 1              & \texttt{bash}, \texttt{sed}, \texttt{awk}, \texttt{grep}                                                            \\[3pt]
-		\textbf{}          & \cvskill{2}    & CI/CD          & 1              & Gradle, Maven, CMake, Travis CI                                                                                     \\ \cmidrule(l){2-5}
+{\small\begin{tabularx}{\textwidth}{@{}rllXX@{}}
+		                   & \textbf{Skill}    & \textbf{Years} & \textbf{Standards, APIs, \& Frameworks}                                                                             \\ \cmidrule(l){2-5}
+		\textbf{Languages} & Java              & 9              & Java SE 11; functional \& declarative constructs with \texttt{java.util.function}, \texttt{java.util.stream}; Guava \\[3pt]
+		\textbf{}          & C/C++/Objective-C & 5              & C18/C++17; Unix/Linux APIs, OpenGL 4.5, GLSL, OpenMP, MPI; Foundation Kit, Cocoa                                    \\[3pt]
+		\textbf{}          & LaTeX             & 4              & Custom document classes; native graphics with PGF/TikZ                                                              \\[3pt]
+		\textbf{}          & Python            & 2              & Scientific computing: \texttt{pandas}, \texttt{scipy}, \texttt{matplotlib}                                          \\[3pt]
+		\textbf{}          & CUDA              & 1              & Looping, hash calculation, block/thread allocation                                                                  \\[3pt]
+		\textbf{}          & PowerShell        & 2              &                                                                                                                     \\[3pt] \cmidrule(l){2-5}
+		\textbf{Tools}     & Git/GitHub        & 2              & ---                                                                                                                 \\[3pt]
+		\textbf{}          & Unix utils        & ---            & \texttt{bash}, \texttt{sed}, \texttt{awk}, \texttt{grep}                                                            \\[3pt]
+		\textbf{}          & IDEs              & ---            & JetBrains IntelliJ, CLion; Visual Studio; XCode                                                                     \\[3pt]
+		\textbf{}          & CI/CD/Build Tools & ---            & Gradle, Maven, CMake, Travis CI                                                                                     \\ \cmidrule(l){2-5}
 	\end{tabularx}
-	\vspace{-2em}
 }
 \setlength{\tabcolsep}{0pt}
-
+\vspace{-0.5cm}
 \section{Leadership}
 \cventry{Aug 2018--May 2020}{Honorary General Secretary}{NUS Astronomical Society}{}{}{
 	\begin{itemize}
