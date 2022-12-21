@@ -75,7 +75,10 @@
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome5}
 \RequirePackage{roboto}
-\RequirePackage[default,opentype]{sourcesanspro}
+% Set British date format, no ordinals
+\RequirePackage[british]{babel}
+\RequirePackage[useregional]{datetime2}
+\DTMlangsetup[en-GB]{ord=omit}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
@@ -86,7 +89,8 @@
 	pdftitle={},
 	pdfauthor={},
 	pdfsubject={},
-	pdfkeywords={}
+	pdfkeywords={},
+	linkcolor=teal,
 }
 % Solves issues Warning: File `cv.out' has changed
 \RequirePackage{bookmark}
@@ -150,7 +154,7 @@
 
 % Boolean value to switch section color highlighting
 \newbool{acvSectionColorHighlight}
-\setbool{acvSectionColorHighlight}{true}
+\setbool{acvSectionColorHighlight}{false}
 
 % Awesome section color
 \def\@sectioncolor#1#2#3{%
@@ -163,9 +167,9 @@
 %-------------------------------------------------------------------------------
 \newcommand*{\headerfont}{\roboto}
 \newcommand*{\headerfontlight}{\robotolight}
-\newcommand*{\footerfont}{\sourcesanspro}
-\newcommand*{\bodyfont}{\sourcesanspro}
-\newcommand*{\bodyfontlight}{\sourcesansprolight}
+\newcommand*{\footerfont}{\roboto}
+\newcommand*{\bodyfont}{\roboto}
+\newcommand*{\bodyfontlight}{\roboto}
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
