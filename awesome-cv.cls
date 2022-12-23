@@ -75,6 +75,7 @@
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome5}
 \RequirePackage{roboto}
+\RequirePackage{roboto-mono}
 % Set British date format, no ordinals
 \RequirePackage[british]{babel}
 \RequirePackage[useregional]{datetime2}
@@ -94,13 +95,6 @@
 }
 % Solves issues Warning: File `cv.out' has changed
 \RequirePackage{bookmark}
-
-%-------------------------------------------------------------------------------
-%                Configuration for directory locations
-%-------------------------------------------------------------------------------
-% Configure an optional directory location for fonts(default: 'fonts/')
-% Not required anymore but left in place for backward compatability.
-\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
 
 %-------------------------------------------------------------------------------
 %                Configuration for layout
