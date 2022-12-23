@@ -1,0 +1,44 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Projects}
+\begin{cventries}
+	\cventry{Compiler for \href{https://ilyasergey.net/CS4212/_static/oat-full.pdf}{Oat language} (OCaml, Menhir)} % Description
+	{Oat Compiler} % Project title
+	{} % leave blank
+	{} % leave blank
+	{
+		\begin{cvitems} % Project description
+			\item Front-end outputs a subset of LLVM IR;\@ back-end compiles IR to a subset of x86\_64 assembly.
+			\item Includes compile-time type-checking and optimisations e.g.\ constant folding, dead-code elimination, and register allocation with graph colouring.
+		\end{cvitems}
+	}
+
+	%---------------------------------------------------------
+
+	\cventry{Quad-core cache-coherence simulator (C++20, CMake)} % Description
+	{cache-sim \emph{\tiny(\href{https://github.com/sharadhr/cs4223-cache-sim}{GitHub repository})}} % Project title
+	{} % leave blank
+	{} % leave blank
+	{
+		\begin{cvitems} % Project description
+			\item Implements the MESI, MOESI, and Dragon cache-coherence protocols.
+			\item Correctly simulates the cache-coherence behaviour of a real quad-core CPU, is configurable (cache size, associativity), and outputs statistics in \texttt{.csv} format.
+		\end{cvitems}
+	}
+
+	%---------------------------------------------------------
+
+	\cventry{Lexer and parser for a C-like toy language (C++17)} % Description
+	{Static Program Analyser} % Project title
+	{} % leave blank
+	{} % leave blank
+	{
+		\begin{cvitems} % Project description
+			\item The lexer is implemented with a \texttt{std::regex} state machine, and the parser is recursive-descent.
+			\item Inserts information such as variable declarations, function calls, and control flow into a database about a given program written in the toy language.
+		\end{cvitems}
+	}
+
+	%---------------------------------------------------------
+\end{cventries}
