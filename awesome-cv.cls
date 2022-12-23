@@ -85,13 +85,13 @@
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
 % Needed to deal hyperlink
-\RequirePackage[hidelinks,unicode,pdfpagelabels=false]{hyperref}
+\RequirePackage[colorlinks,unicode,pdfpagelabels=false]{hyperref}
 \hypersetup{%
 	pdftitle={},
 	pdfauthor={},
 	pdfsubject={},
 	pdfkeywords={},
-	linkcolor=teal,
+	urlcolor=teal,
 }
 % Solves issues Warning: File `cv.out' has changed
 \RequirePackage{bookmark}
@@ -172,14 +172,14 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{24pt}{1em}\headerfontlight\color{graytext} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{24pt}{1em}\headerfont\bfseries\color{text} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{sectioncolour}\@sectioncolor #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{0.1em}\bodyfont\bfseries\color{sectioncolour}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
@@ -403,7 +403,7 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{3mm}
+\newcommand{\acvSectionTopSkip}{1mm}
 \newcommand{\acvSectionContentTopSkip}{2.5mm}
 
 
@@ -466,14 +466,14 @@
 			\ifthenelse{\isundefined{\@mobile}}%
 			{}%
 			{%
-				\href{tel:\@mobile}{\faMobile\acvHeaderIconSep\@mobile}%
+				\faMobile~\href{tel:\@mobile}{\acvHeaderIconSep\@mobile}%
 				\setbool{isstart}{false}%
 			}%
 			\ifthenelse{\isundefined{\@email}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\@email}%
+				\faEnvelope~\href{mailto:\@email}{\acvHeaderIconSep\@email}%
 			}%
 			\ifthenelse{\isundefined{\@dateofbirth}}%
 			{}%
@@ -486,55 +486,55 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+				\faHome~\href{http://\@homepage}{\acvHeaderIconSep\@homepage}%
 			}%
 			\ifthenelse{\isundefined{\@github}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+				\faGithubSquare~\href{https://github.com/\@github}{\acvHeaderIconSep\@github}%
 			}%
 			\ifthenelse{\isundefined{\@gitlab}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
+				\faGitlab~\href{https://gitlab.com/\@gitlab}{\acvHeaderIconSep\@gitlab}%
 			}%
 			\ifthenelse{\isundefined{\@bitbucket}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://bitbucket.com/\@bitbucket}{\faBitbucket\acvHeaderIconSep\@bitbucket}%
+				\faBitbucket~\href{https://bitbucket.com/\@bitbucket}{\acvHeaderIconSep\@bitbucket}%
 			}%
 			\ifthenelse{\isundefined{\@stackoverflowid}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}%
+				\faStackOverflow~\href{https://stackoverflow.com/users/\@stackoverflowid}{\acvHeaderIconSep\@stackoverflowname}%
 			}%
 			\ifthenelse{\isundefined{\@linkedin}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://www.linkedin.com/in/\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
+				\faLinkedin~\href{https://www.linkedin.com/in/\@linkedin}{\acvHeaderIconSep\@linkedin}%
 			}%
 			\ifthenelse{\isundefined{\@orcid}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://orcid.org/\@orcid}{\faOrcid\acvHeaderIconSep\@orcid}%
+				\faOrcid~\href{https://orcid.org/\@orcid}{\acvHeaderIconSep\@orcid}%
 			}%
 			\ifthenelse{\isundefined{\@twitter}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+				\faTwitter~\href{https://twitter.com/\@twitter}{\acvHeaderIconSep\@twitter}%
 			}%
 			\ifthenelse{\isundefined{\@mastodonname}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://\@mastodoninstance/@\@mastodonname}{\faMastodon\acvHeaderIconSep\@mastodonname}%
+				\faMastodon~\href{https://\@mastodoninstance/@\@mastodonname}{\acvHeaderIconSep\@mastodonname}%
 			}%
 			\ifthenelse{\isundefined{\@skype}}%
 			{}%
@@ -546,37 +546,37 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
+				\faReddit~\href{https://www.reddit.com/user/\@reddit}{\acvHeaderIconSep\@reddit}%
 			}%
 			\ifthenelse{\isundefined{\@researchgate}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://www.researchgate.net/profile/\@researchgate}{\faResearchgate\acvHeaderIconSep\@researchgate}%
+				\faResearchgate~\href{https://www.researchgate.net/profile/\@researchgate}{\acvHeaderIconSep\@researchgate}%
 			}%
 			\ifthenelse{\isundefined{\@xing}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
+				\faXingSquare~\href{https://www.xing.com/profile/\@xing}{\acvHeaderIconSep\@xing}
 			}%
 			\ifthenelse{\isundefined{\@medium}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\@medium}%
+				\faMedium~\href{https://medium.com/@\@medium}{\acvHeaderIconSep\@medium}%
 			}%
 			\ifthenelse{\isundefined{\@kaggle}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://kaggle.com/\@kaggle}{\faKaggle\acvHeaderIconSep\@kaggle}%
+				\faKaggle~\href{https://kaggle.com/\@kaggle}{\acvHeaderIconSep\@kaggle}%
 			}%
 			\ifthenelse{\isundefined{\@googlescholarid}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://scholar.google.com/citations?user=\@googlescholarid}{\faGraduationCap\acvHeaderIconSep\@googlescholarname}%
+				\faGraduationCap~\href{https://scholar.google.com/citations?user=\@googlescholarid}{\acvHeaderIconSep\@googlescholarname}%
 			}%
 			\ifthenelse{\isundefined{\@extrainfo}}%
 			{}%
@@ -610,6 +610,7 @@
 	\sectionstyle{#1}
 	\phantomsection
 	\color{sectiondivider}\vhrulefill{0.9pt}
+	\vspace{-1.5mm}
 }
 
 % Define a subsection for CV
