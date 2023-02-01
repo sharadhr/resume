@@ -23,6 +23,6 @@
 ## Mac OS X metadata files:
 *.DS_Store
 
-# Cover letter
-*/coverletter.*
-*/coverletter.tex
+# Cover letter ignore
+code/coverletter.tex
+code/coverletter.pdf
