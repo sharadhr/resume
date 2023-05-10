@@ -9,15 +9,12 @@ CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
 
 export max-print-line=2147483647
 
-code: $(foreach x, coverletter cv resume, $x.pdf)
+code: $(foreach x, cv resume, $x.pdf)
 
 resume.pdf: $(CODE_DIR)/resume.tex $(RESUME_SRCS)
 	 $(CC) -pdflua -lualatex="lualatex --shell-escape -file-line-error" -output-directory=$(CODE_DIR) $<
 
 cv.pdf: $(CODE_DIR)/cv.tex $(CV_SRCS)
-	 $(CC) -pdflua -lualatex="lualatex --shell-escape -file-line-error" -output-directory=$(CODE_DIR) $<
-
-coverletter.pdf: $(CODE_DIR)/coverletter.tex
 	 $(CC) -pdflua -lualatex="lualatex --shell-escape -file-line-error" -output-directory=$(CODE_DIR) $<
 
 clean:
