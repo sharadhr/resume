@@ -618,10 +618,10 @@
 % Define a subsection for CV
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
-	\vspace{-1mm}
+	\vspace{-0.5mm}
 	\subsectionstyle{#1}
 	\phantomsection
-	\vspace{-3mm}
+	\vspace{-2.5mm}
 }
 
 % Define a paragraph for CV
