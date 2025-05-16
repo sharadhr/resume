@@ -1,9 +1,9 @@
 %-------------------------------------------------------------------------------
 %	SECTION TITLE
 %-------------------------------------------------------------------------------
-\cvsection{Projects and Open-Source}
+\cvsection{Projects}
 
-\cvsubsection{Personal projects}
+\cvsubsection{Personal projects and contributions}
 \begin{cventries}
 	\cventry{C++20 module for Vulkan-Hpp (C++, CMake)} % Description
 	{vulkan.cppm \footnotesize{(\href{https://github.com/KhronosGroup/Vulkan-Hpp/pull/1582}{Merge request})}} % Project title
@@ -11,12 +11,24 @@
 	{} % leave blank
 	{
 		\begin{cvitems} % Project description
-			\item Modified a code generator to output a C++20 module interface file for the Vulkan-Hpp wrapper library.
-			\item Exported C macros and function-like macros as \texttt{constexpr} variables and functions, thus improving type safety and performance.
-			\item Tested with Clang on Linux and MSVC on Windows.
+			\item Adapted a code generator to output a C++20 module interface file for the Vulkan-Hpp wrapper library.
+			\item Improved type safety and performance by exporting C macros and function-like macros as \texttt{constexpr} variables and functions.
 		\end{cvitems}
 	}
+
+	%---------------------------------------------------------
+
+	% \cventry{C++ standard module arguments for Clang-cl driver} % Description
+	% {LLVM \footnotesize{(\href{https://github.com/llvm/llvm-project/pull/98761}{PR \#98671}, \href{https://github.com/llvm/llvm-project/pull/121046}{PR \#121046})}} % Project title
+	% {} % leave blank
+	% {} % leave blank
+	% {
+	% 	\begin{cvitems} % Project description
+	% 		\item Exposed \texttt{clang} C++ standard module compilation arguments to \texttt{clang-cl} driver.
+	% 	\end{cvitems}
+	% }
 \end{cventries}
+
 \cvsubsection{Coursework}
 \begin{cventries}
 	\cventry{Compiler for statically-typed, C-like \href{https://ilyasergey.net/CS4212/_static/oat-full.pdf}{Oat language} with Python-like list comprehension (OCaml, Menhir)} % Description
@@ -30,31 +42,43 @@
 		\end{cvitems}
 	}
 
-	%---------------------------------------------------------
-
-	\cventry{Quad-core cache-coherence simulator (C++20, CMake)} % Description
-	{cache-sim \footnotesize(\href{https://github.com/sharadhr/cs4223-cache-sim}{Repository})} % Project title
+	\cventry{} % Description
+	{Also enjoyed working on, from scratch:} % Project title
 	{} % leave blank
 	{} % leave blank
 	{
-		\begin{cvitems} % Project description
-			\item Implements MESI, MOESI, and Dragon cache-coherence protocols.
-			\item Correctly simulates cache-coherence behaviour of a real quad-core CPU, is configurable (cache size, associativity), and outputs statistics in \texttt{.csv} format.
-		\end{cvitems}
+		\vspace{-4mm}
+		\begin{cvitems}
+		\item \textbf{\href{https://github.com/sharadhr/cs4223-cache-sim}{cache-sim}} (C++20, CMake), which implements a variety of cache-coherence protocols for a quad-core CPU;
+		\item \textbf{Lexer and parser for a C-like toy language} (C++17), using recursive descent parsing and \texttt{std::regex} state machine.
+	\end{cvitems}
 	}
-
-	%---------------------------------------------------------
-
-	\cventry{Lexer and parser for a C-like toy language (C++17)} % Description
-	{Static Program Analyser} % Project title
-	{} % leave blank
-	{} % leave blank
-	{
-		\begin{cvitems} % Project description
-			\item Lexer implemented with \texttt{std::regex} state machine; parser is recursive-descent.
-			\item Inserts information such as variable declarations, function calls, and control flow into a database about a given program written in the toy language.
-		\end{cvitems}
-	}
-
-	%---------------------------------------------------------
 \end{cventries}
+
+	%---------------------------------------------------------
+
+	% \cventry{Quad-core cache-coherence simulator (C++20, CMake)} % Description
+	% {cache-sim \footnotesize(\href{https://github.com/sharadhr/cs4223-cache-sim}{Repository})} % Project title
+	% {} % leave blank
+	% {} % leave blank
+	% {
+	% 	\begin{cvitems} % Project description
+	% 		\item Implements MESI, MOESI, and Dragon cache-coherence protocols.
+	% 		\item Correctly simulates cache-coherence behaviour of a real quad-core CPU, is configurable (cache size, associativity), and outputs statistics in \texttt{.csv} format.
+	% 	\end{cvitems}
+	% }
+
+	%---------------------------------------------------------
+
+	% \cventry{Lexer and parser for a C-like toy language (C++17)} % Description
+	% {Static Program Analyser} % Project title
+	% {} % leave blank
+	% {} % leave blank
+	% {
+	% 	\begin{cvitems} % Project description
+	% 		\item Lexer implemented with \texttt{std::regex} state machine; parser is recursive-descent.
+	% 		\item Inserts information such as variable declarations, function calls, and control flow into a database about a given program written in the toy language.
+	% 	\end{cvitems}
+	% }
+
+	%---------------------------------------------------------
