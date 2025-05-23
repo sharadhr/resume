@@ -38,22 +38,31 @@
 	{} % leave blank
 	{
 		\begin{cvitems} % Project description
-			\item Front-end outputs a subset of LLVM IR;\@ back-end compiles IR to a subset of x86\_64 assembly.
-			\item Includes compile-time type-checking and optimisations e.g.\ constant folding, dead-code elimination, and register allocation with graph colouring.
+			\item Front-end outputs a subset of LLVM IR;\@ back-end lowers to a subset of x86\_64 assembly.
+			\item Static single assignment (SSA) design to enable optimisations.
+			\item Implements a type system with type inference, expression and statement typing, and type covariance/contravariance.
+			\item Compile-time optimisations e.g.\ constant and expression folding, dead-code elimination, and register allocation with graph colouring.
 		\end{cvitems}
 	}
 
-	\cventry{} % Description
-	{Also enjoyed working on, from scratch:} % Project title
+	\cventry{Lexer and parser for a C-like toy language (C++17)} % Description
+	{Static Program Analyser} % Project title
 	{} % leave blank
 	{} % leave blank
 	{
-		\vspace{-4mm}
-		\begin{cvitems}
-		\item \textbf{\href{https://github.com/sharadhr/cs4223-cache-sim}{cache-sim}} (C++20, CMake), which implements a variety of cache-coherence protocols for a quad-core CPU;
-		\item \textbf{Lexer and parser for a C-like toy language} (C++17), using recursive descent parsing and \texttt{std::regex} state machine.
-	\end{cvitems}
+		\begin{cvitems} % Project description
+			\item Lexer implemented with \texttt{std::regex} state machine; straightforward greedy algorithm.
+			\item Recursive-descent LL parser, with left-recursion elimination and operator precedence parsing.
+			\item Inserts information such as variable declarations, function calls, and control flow into a database about a given program written in the toy language.
+		\end{cvitems}
 	}
+
+	\begin{flushleft}
+		\cvparagraph{\textbf{Also enjoyed implementing:}
+
+		\textbf{\href{https://github.com/sharadhr/cs4223-cache-sim}{cache-sim}} (C++20, CMake), which implements MESI, MOESI, Dragon cache-coherence protocols for a quad-core CPU.\@
+		}
+	\end{flushleft}
 \end{cventries}
 
 	%---------------------------------------------------------
