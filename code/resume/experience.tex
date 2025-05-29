@@ -1,20 +1,18 @@
 %-------------------------------------------------------------------------------
 %	SECTION TITLE
 %-------------------------------------------------------------------------------
-\cvsection{Experience}
+\cvsection{Work Experience}
 \begin{cventries}
 	\cventry{Software Engineer (C++, Objective-C, macOS and Windows desktop programming, CMake, Jenkins, C\#/Avalonia, Windows driver programming)} % Job title
 	{PetaGene Ltd} % Organization
 	{Cambridge, United Kingdom} % Location
 	{Aug 2023 -- Present} % Date(s)
 	{
-		\cvparagraph{Contributed to cunoFS/Object Mount: provides POSIX-compatible file access to object storage, with a focus on performance and reliability; targeted at media, healthcare, and high-performance computing (HPC) customers.}
-		\vspace{4.5mm}
 		\begin{cvitems} % Description(s) of tasks/responsibilities
-			\item Led migration of entire 500 KLOC codebase from Linux-only to macOS and Windows.
 			\item Spearheaded build tools transition from GNU Autotools and shell script to vcpkg and CMake, thus reducing build and CI run times by a factor of 10, enhancing developer productivity and enabling IDE usage.
 			\item Introduced optimisations for thumbnails presented by Object Mount in Windows Explorer and macOS Finder. Improved responsiveness for media and entertainment customers by reducing network traffic by 90\%. Used by a major film studio.
 			\item Implemented optimisations across network mounts on macOS, allowing for server-side copy and deduplication.
+			\item Applied static analysis and code quality tools on the codebase, allowing for early detection of bugs and security vulnerabilities, improving code quality, and reducing technical debt.
 			\item Represented the company at \href{https://hallerickson.ungerboeck.com/prod/app85.cshtml?aat=5663535078317a434974474478437845326c2b766b2b4c562b355033396d433556704e2b3065744c5161773d&ExhibitorID=7040}{SuperComputing 2023}, the largest HPC conference in the world in Denver, CO.\@ Attracted \textasciitilde100 leads, and several new customers.
 		\end{cvitems}
 	}
@@ -42,7 +40,7 @@
 	{
 		\begin{cvitems} % Description(s) of tasks/responsibilities
 			\item Implemented a C++ wrapper over Linux Serial Peripheral Interface (SPI) syscall interface. Reduced wheel-reinvention, and improved linkage for other projects using C++.
-			\item Wrote firmware on an STM32 microcontroller in C++ to emulate a Trusted Platform Module (TPM) over I\textsuperscript{2}C for Raspberry Pi (rPi). Improved security on the rPi, and saved costs on purpose-built TPMs.
+			\item Reused COVID-19 contact-tracing tokens using STM32 microcontrollers, by rewriting firmware in C++ to emulate a Trusted Platform Module (TPM) over I\textsuperscript{2}C for Raspberry Pi (rPi). Reduced costs by recycling and reusing existing hardware.
 		\end{cvitems}
 	}
 
